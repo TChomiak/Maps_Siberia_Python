@@ -8,7 +8,7 @@ Tasks include:
 4. Extraction from Raster Data
 5. Mapping with Matplotlib, Geopandas, and Rasterio
 
-### Shapefiles:
+### Vector Data:
 1. Yenisey River Basin
 3. Ecological Regions (Biomes)
 4. HydroBASINS (Watersheds)
