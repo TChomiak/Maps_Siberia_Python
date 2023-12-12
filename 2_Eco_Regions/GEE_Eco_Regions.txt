@@ -1,0 +1,17 @@
+// Load the RESOLVE Ecoregions 2017 dataset
+var ecoregions = ee.FeatureCollection("RESOLVE/ECOREGIONS/2017");
+
+// Shapefile Area
+var region = ee.FeatureCollection('projects/ee-xxxxx/assets/imported_shapefile_name');
+
+// Filter the ecoregions dataset to only include features that intersect with your region
+var clippedEcoregions = ecoregions.filterBounds(region.geometry());
+
+// Export the clipped dataset to Google Drive
+Export.table.toDrive({
+  collection: clippedEcoregions,
+  description: 'Yenisey_RESOLVE_Ecoregions_2017',
+  folder: 'Yenisey_RESOLVE_Ecoregions_2017', 
+  fileFormat: 'SHP',  // Export as a shapefile
+  crs: 'EPSG:4326'  
+});
